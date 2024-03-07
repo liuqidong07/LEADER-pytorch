@@ -5,7 +5,7 @@ This is the official implementation of the paper "Large Language Model Distillin
 You can implement our model according to the following steps:
 
 1. Prepare the LlaMA-7B model: download all files of LlaMA-7B and put them into `resources/llama-7b/`.
-2. Prepare the data: apply the data from the [officail website](https://mimic.mit.edu/), and put the unzipped raw data into `data/mimic3/raw/` and `data/mimic4/`, respectively. Then, run the scripts `construction.ipynb` under `data/mimic3/` and `data/mimic4/` to preprocess the data. The preprocessed data will be saved under `mimic3/handled/` and `mimic4/handled/.`
+2. Prepare the data: apply the data from the [officail website](https://mimic.mit.edu/), and put the unzipped raw data into `data/mimic3/raw/` and `data/mimic4/`, respectively. Then, run the scripts `construction.ipynb` under `data/mimic3/` and `data/mimic4/` to preprocess the data. The preprocessed data will be saved under `mimic3/handled/` and `mimic4/handled/.` Besides, the file to convert ATC code to drug name is available from this [link](https://github.com/fabkury/atcd), e.g., "WHO ATC-DDD 2021-12-03.csv".
 3. Install the necessary packages. Run the command:
 
    ```bash
