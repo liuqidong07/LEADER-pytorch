@@ -6,7 +6,7 @@ import numpy as np
 import pandas as pd
 from tqdm import tqdm
 from trainers.trainer import Trainer
-from models.LEADER import PNet, PNetv2
+from models.LEADER import LEADER
 from utils.config import BertConfig
 from utils.utils import t2n, metric_report, metric_report_group
 import time
@@ -35,7 +35,7 @@ class DistillTrainer(Trainer):
         config = BertConfig(vocab_size_or_config_json_file=len(self.tokenizer.vocab.word2idx))
         config.hidden_size = self.args.hidden_size
         if self.args.model_name == "pnet":
-            self.model = PNet(config, self.args, self.tokenizer, self.device, self.profile_tokenizer)
+            self.model = LEADER(config, self.args, self.tokenizer, self.device, self.profile_tokenizer)
 
         if not self.args.offline:
             self.teacher = LlamaForMedRec.from_pretrained(
